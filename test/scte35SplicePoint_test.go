@@ -1,6 +1,7 @@
 package test
 
 import (
+	"encoding/base64"
 	"testing"
 
 	"github.com/quangngotan95/go-m3u8/m3u8"
@@ -13,5 +14,5 @@ func TestScte35SplicePointItem_Parse(t *testing.T) {
 	sp, err := m3u8.NewScte35SplicePoint(line)
 
 	assert.Nil(t, err)
-	assert.Equal(t, "/DA9AAAAAAAAAP/wBQb+uYbZqwAnAiVDVUVJAAAKqX//AAEjW4AMEU1EU05CMDAxMTMyMjE5M19ONAAAmXz5JA==", sp.Data)
+	assert.Equal(t, "/DA9AAAAAAAAAP/wBQb+uYbZqwAnAiVDVUVJAAAKqX//AAEjW4AMEU1EU05CMDAxMTMyMjE5M19ONAAAmXz5JA==", base64.StdEncoding.EncodeToString(sp.Data))
 }
