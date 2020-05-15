@@ -16,6 +16,7 @@ const (
 	MediaItemTag         = `#EXT-X-MEDIA`
 	PlaylistItemTag      = `#EXT-X-STREAM-INF`
 	PlaylistIframeTag    = `#EXT-X-I-FRAME-STREAM-INF`
+	Scte35SplicePointTag = `#EXT-X-SPLICEPOINT-SCTE35`
 
 	// Playlist tags
 

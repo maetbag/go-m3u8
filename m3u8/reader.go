@@ -134,6 +134,12 @@ func parseLine(line string, pl *Playlist, st *state) error {
 			return parseError(line, err)
 		}
 		pl.Items = append(pl.Items, dri)
+	case matchTag(line, Scte35SplicePointTag):
+		sp, err := NewScte35SplicePoint(line)
+		if err != nil {
+			return parseError(line, err)
+		}
+		pl.Items = append(pl.Items, sp)
 
 	// media playlist tags
 	case matchTag(line, MediaSequenceTag):

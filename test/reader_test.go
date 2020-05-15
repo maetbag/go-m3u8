@@ -284,6 +284,17 @@ func TestReader_DateRange(t *testing.T) {
 	assert.IsType(t, item, p.Items[4])
 }
 
+func TestReader_Scte35SplicePoint(t *testing.T) {
+	p, err := m3u8.ReadFile("fixtures/scte35SplicePoint.m3u8")
+	assert.Nil(t, err)
+	assert.True(t, p.IsValid())
+	assert.Equal(t, 5, p.ItemSize())
+
+	item := &m3u8.Scte35SplicePoint{}
+	assert.IsType(t, item, p.Items[0])
+	assert.IsType(t, item, p.Items[4])
+}
+
 func TestReader_Invalid(t *testing.T) {
 	_, err := m3u8.ReadFile("path/to/file")
 	assert.NotNil(t, err)
