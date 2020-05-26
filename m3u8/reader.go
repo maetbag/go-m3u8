@@ -140,6 +140,18 @@ func parseLine(line string, pl *Playlist, st *state) error {
 			return parseError(line, err)
 		}
 		pl.Items = append(pl.Items, sp)
+	case matchTag(line, CueOutTag):
+		sp, err := NewCueOutItem(line)
+		if err != nil {
+			return parseError(line, err)
+		}
+		pl.Items = append(pl.Items, sp)
+	case matchTag(line, CueInTag):
+		sp, err := NewCueInItem(line)
+		if err != nil {
+			return parseError(line, err)
+		}
+		pl.Items = append(pl.Items, sp)
 
 	// media playlist tags
 	case matchTag(line, MediaSequenceTag):
