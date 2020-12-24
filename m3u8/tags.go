@@ -17,6 +17,7 @@ const (
 	PlaylistItemTag      = `#EXT-X-STREAM-INF`
 	PlaylistIframeTag    = `#EXT-X-I-FRAME-STREAM-INF`
 	Scte35SplicePointTag = `#EXT-X-SPLICEPOINT-SCTE35`
+	OATCLSScte35Tag      = `#EXT-OATCLS-SCTE35`
 	CueOutTag            = `#EXT-X-CUE-OUT`
 	CueInTag             = `#EXT-X-CUE-IN`
 
